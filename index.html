@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shivanya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            direction: ltr;
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFE6EE 0%, #FFD1DC 100%);
+            transition: background 3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FF6F91;
+            position: relative;
+            cursor: none;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        #custom-cursor {
+            position: fixed;
+            font-size: 20px;
+            color: #FF9999;
+            pointer-events: none;
+            z-index: 9999;
+            animation: sparkle 1.5s infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        .hidden {
+            display: none !important;
+        }
+        #batlu-detector {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
+            width: 400px;
+            text-align: center;
+            z-index: 5;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #batlu-detector h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            color: #FF6F91;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        #batlu-detector input {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid #FF6F91;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            color: #FF6F91;
+            width: 80%;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        #batlu-detector input::placeholder {
+            color: #FF9999;
+            opacity: 1;
+        }
+        #batlu-detector input:focus {
+            border-color: #FF69B4;
+        }
+        #batlu-detector input[type="password"] {
+            -webkit-text-security: disc;
+            color: #FF6F91;
+        }
+        #batlu-detector .meter {
+            width: 80%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        #batlu-detector .meter-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #FF6F91, #FFD700);
+            transition: width 0.3s ease;
+        }
+        #batlu-detector button {
+            padding: 10px 30px;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #FF6F91, #FFD700);
+            color: white;
+            cursor: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        #batlu-detector button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        #batlu-detector button:hover::before {
+            left: 100%;
+        }
+        #batlu-detector button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        .msg-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) !important;
+            backdrop-filter: blur(5px);
+            width: fit-content;
+            z-index: 3;
+        }
+        .msg {
+            font-size: 40px;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .sparkle {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #FFD700;
+            animation: sparkle 1.5s infinite;
+        }
+        .btn {
+            padding: 15px 35px;
+            font-size: 22px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: none;
+            margin: 20px 40px;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            z-index: 5;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        .btn:hover::before {
+            left: 100%;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        #lets-start {
+            background: linear-gradient(45deg, #FF00FF, #FFD700);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #yes-btn {
+            background: linear-gradient(45deg, #FF6F91, #FFC1CC);
+        }
+        #no-btn {
+            background: linear-gradient(45deg, #D3D3D3, #A9A9A9);
+        }
+        #lights-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+        }
+        #decorate-btn {
+            background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+        }
+        #cake-btn {
+            background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+        }
+        #balloons-btn {
+            background: linear-gradient(45deg, #87CEFA, #4682B4);
+        }
+        #cut-btn {
+            background: linear-gradient(45deg, #98FB98, #32CD32);
+        }
+        #message-btn {
+            background: linear-gradient(45deg, #E6E6FA, #D8BFD8);
+        }
+        #voice-message-btn, #replay-btn, #end-btn {
+            background: linear-gradient(45deg, #FF69B4, #FFD700);
+        }
+        #voice-message-btn {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #FF69B4, #FFD700);
+        }
+        @media (max-width: 768px) {
+            #voice-message-btn {
+                top: 85%;
+            }
+        }
+        @media (max-width: 480px) {
+            #voice-message-btn {
+                top: 90%;
+            }
+        }
+        #choice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) !important;
+            z-index: 3;
+        }
+        #no-message {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #FF6666;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 24px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 4;
+            animation: shake 0.5s infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translate(-50%, -50%) translateX(0); }
+            25% { transform: translate(-50%, -50%) translateX(-5px); }
+            75% { transform: translate(-50%, -50%) translateX(5px); }
+        }
+        #lights, #decorate, #balloons, #cake-btn-div, #cut, #message, #voice-message, #end-options {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        #balloons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            z-index: 10;
+        }
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #FF9999;
+            z-index: 1;
+            opacity: 0;
+            top: 100%;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+        .balloon {
+            position: absolute;
+            font-size: 30px;
+            color: #87CEFA;
+            z-index: 1;
+            opacity: 0;
+            top: 100%;
+            animation: float 6s ease-in-out infinite;
+        }
+        #birthday-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        .happy-birthday-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4;
+            animation: glow 2s infinite;
+        }
+        @media (max-width: 768px) {
+            .happy-birthday-text {
+                font-size: 40px;
+                top: 5%;
+            }
+        }
+        @media (max-width: 480px) {
+            .happy-birthday-text {
+                font-size: 30px;
+                top: 3%;
+            }
+        }
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4; }
+            50% { text-shadow: 0 0 20px #FF69B4, 0 0 30px #FF69B4; }
+        }
+        #cake {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) !important;
+            font-size: 80px;
+            color: #FFB6C1;
+            z-index: 3;
+            transition: top 0.5s ease;
+        }
+        @media (max-width: 768px) {
+            #cake { font-size: 60px; }
+        }
+        @media (max-width: 480px) {
+            #cake { font-size: 40px; }
+        }
+        #cut {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+        #heart-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0;
+            color: #FF6F91;
+            z-index: 1;
+        }
+        .message-scroll-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            max-height: 50vh;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+            z-index: 5;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #message-text {
+            font-size: 24px;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            line-height: 1.8;
+        }
+        @media (max-width: 768px) {
+            #message-text { font-size: 20px; }
+            .message-scroll-container { max-height: 40vh; }
+        }
+        @media (max-width: 480px) {
+            #message-text { font-size: 16px; }
+            .message-scroll-container { max-height: 30vh; }
+        }
+        .message-scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .message-scroll-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .message-scroll-container::-webkit-scrollbar-thumb {
+            background: #FF6F91;
+            border-radius: 10px;
+        }
+        .message-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #FF9999;
+        }
+        #voice-message audio {
+            margin: 20px 0;
+            outline: none;
+            width: 300px;
+            background: linear-gradient(45deg, #FF69B4, #FFD700);
+            border-radius: 10px;
+            padding: 5px;
+        }
+        #voice-message audio::-webkit-media-controls-panel {
+            background: transparent;
+            border-radius: 10px;
+        }
+        #end-options {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        #end-message {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #FF69B4;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 24px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 6;
+        }
+        @media (max-width: 768px) {
+            #end-message { font-size: 20px; padding: 10px 20px; }
+        }
+        @media (max-width: 480px) {
+            #end-message { font-size: 16px; padding: 8px 15px; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="custom-cursor">❤️</div>
+    <div class="container">
+        <div id="batlu-detector">
+            <h2>Batlu Detector Meter 🔒</h2>
+            <input type="password" id="batlu-password" placeholder="Enter Password">
+            <div class="meter">
+                <div class="meter-fill" id="meter-fill"></div>
+            </div>
+            <button id="batlu-submit">Verify</button>
+        </div>
+        <div id="lets-start" class="btn hidden">Let’s Start</div>
+        <div id="msg1" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">AYY Motus, aaj toh aapkadin che na, right? 🥳</div>
+        </div>
+        <div id="msg2" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Happyyy birthdayyy, Batluuuu!!!! 🎉</div>
+        </div>
+        <div id="msg3" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Madam ji, aaj ka din pura aapka che. 🌟</div>
+        </div>
+        <div id="msg4" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">So me got something special for your 14th borthday. 😊</div>
+        </div>
+        <div id="msg5" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Wishing you tons of joy today. 🎂</div>
+        </div>
+        <div id="msg6" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Ha so batlu ji, ready for a birthday surprise? 🎈</div>
+        </div>
+        <div id="msg7" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Something nice is coming your way. 🎁</div>
+        </div>
+        <div id="msg8" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Now count to 10 with eyes closed—here we go. 👀</div>
+        </div>
+        <div id="msg9" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">10, 9, 8, 7, 6, 5… (AAKH BAND KR) 😌</div>
+        </div>
+        <div id="msg10" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">4, 3, 2, 1… I can see ur eyes open rn... (cam on che aapka..)😊</div>
+        </div>
+        <div id="msg11" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">SURPRISEE !!!!!!! Yourrr gift is... my WIshessss !!!!!!!!! 🎈</div>
+        </div>
+        <div id="msg12" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">OFC no real gifts FOR YOU... 😜</div>
+        </div>
+        <div id="msg12-5" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Just kidding, my dumb gorl! The real surprise is coming up next... 🎉</div>
+        </div>
+        <div id="msg14" class="msg-box hidden">
+            <span class="sparkle">✨</span>
+            <div class="msg">Anyways, let’s stop joking around and continue with your ‘Yes,’ okay? 😊</div>
+        </div>
+        <div id="choice" class="hidden">
+            <button id="yes-btn" class="btn">Yes</button>
+            <button id="no-btn" class="btn">No</button>
+        </div>
+        <div id="no-message" class="hidden">
+            Shivanya plss press the yes buttonnn !!! 🥺
+        </div>
+        <div id="lights" class="hidden"><button id="lights-btn" class="btn">Turn on the Lights</button></div>
+        <div id="decorate" class="hidden"><button id="decorate-btn" class="btn">Decorate</button></div>
+        <div id="balloons" class="hidden"><button id="balloons-btn" class="btn">Fly the Balloons</button></div>
+        <div id="cake-btn-div" class="hidden"><button id="cake-btn" class="btn">Cut the Cake</button></div>
+        <div id="cut" class="hidden"><button id="cut-btn" class="btn">Cut!</button></div>
+        <div id="message" class="hidden"><button id="message-btn" class="btn">Message</button></div>
+        <div id="birthday-decoration" class="hidden">
+            <div class="happy-birthday-text">HAPPY BIRTHDAY, SHIVANYA!</div>
+        </div>
+        <div id="cake" class="hidden">🎂</div>
+        <div id="heart-bg" class="hidden">❤️</div>
+        <div class="message-scroll-container hidden">
+            <div id="message-text">
+                Aree chhoti packet badi dhamakaaa, chhoti si uljhanon se bhari but pyaari si Shivanyaaaa, today’s your dayyy, and I hope it starts with your brightest smile and ends with peace in your heart 🧡<br><br>
+                Honestly, I don’t even know where to begin with you. Tu ek aisi full-on madness wali energy ho jo kabhi kabhi duniya ke liye zyada lagti hai, par meri nazar mein tu bilkul sahi hai, budhuuu (MAJAK). Emotional, overgiving, thodi pyaar mein pagal, thodi duniya se ladne wali --- but full dil se ladne wali too. I’ve seen it... how much you care, how hard you try (jaise potty krte time krte na GHRRRRR), even when no one notices.. Tujh mein ek alag hi level ka strength hai, jo shayad tu khud kabhi nahi dekh pati....<br><br>
+                You used to vent to me, (abhi bhi kr skti OFC)... and even if it was chaotic, emotional, ya thoda confused but ye, the thing is, bisi not gunna lie kabhi bhi judge nahi kiya maine, na kabhi karunga ofc (uk my khud se judge krne wali ability). And the real reason is that kyunki I understood. I understand that things are not easy for you. With how strict your family is, how many rules you face, how you're still fighting through all of that to ace your studies, to keep being soft and loving... that takes courage. Real courage.<br><br>
+                And yeah... tu chahti thi ki koi aur tujhse (ogwin ro smth i forgot) ye sab kahe, wo banda jo tere dil ke kareeb hai. Shayad usne nahi kaha, but mein to KAHUGA. Ha but mujhe laga ki jitna mere se ho sake, utna toh kar hi skta. So if this doesn't mean much, that’s okay. But this is for you. Kyunki tu deserve karti hai ke koi tujhse kahe ki you are seeeen, you are appreciated, and you are doing bhery well. (kua) 🌸<br><br>
+                Bas hosla banaye rakhna, thoda patience aur thoda sa apne liye pyaar... Things will get better. Shayad dheere se, par zaroor. And jab tak tu khud ke liye khadi hai, main hamesha teri side mein hoon, even from a distance (wo baas marti na tu thoda...). Chhoti hai tu height se but dam se bohot badi hai (roast with love is so kewl lmAO), and kabhi bhi feel ho ki tu akeli hai, ya kuch samajh nahi aa raha -- I’m still here (bhoooot~). Maybe not online much, but heart mein tu wahi Batlu hai jiska mein gala pakadne jitna care krta hoon, ofc bina kisi condition ke. (choti bachi kahi ki)<br><br>
+                So enjoy today, thoda hasna, thoda chill karna, aur apne liye bhi feel karna ki you matter. Always. (I MEAN TIME DENA NOT FEELINGS LENE BAITHNA)<br><br>
+                Happy Birthday again, meri chhoti overthinking genius Batlu 💛🎈 (genuis was formality guyz)<br><br>
+                Tu shine karegi, just don’t stop believing in yourself. (ekdam teel laga ke shine krna ok)
+            </div>
+        </div>
+        <button id="voice-message-btn" class="btn hidden">Hear My Voice Message 🎙️</button>
+        <div id="voice-message" class="hidden">
+            <audio id="voice-audio" controls>
+                <source src="https://raw.githubusercontent.com/Legacyavg/shiv/main/ok_Trim1%20(1).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div id="end-options" class="hidden">
+            <button id="replay-btn" class="btn">Replay Celebration</button>
+            <button id="end-btn" class="btn">End Celebration</button>
+        </div>
+        <div id="end-message" class="hidden">
+            You can close the window now, thank you! 🎉
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof gsap === "undefined") {
+                console.error("GSAP failed to load. Animations will be disabled.");
+                window.gsap = {
+                    to: (target, vars) => {
+                        console.warn("GSAP not loaded, skipping animation for:", target);
+                        if (vars.onComplete) vars.onComplete();
+                    },
+                    fromTo: (target, fromVars, toVars) => {
+                        console.warn("GSAP not loaded, skipping animation for:", target);
+                        if (toVars.onComplete) toVars.onComplete();
+                    },
+                    set: (target, vars) => {
+                        console.warn("GSAP not loaded, skipping set for:", target);
+                    },
+                    timeline: () => ({
+                        to: () => {},
+                        play: () => {},
+                    }),
+                };
+            }
+            if (typeof confetti === "undefined") {
+                console.error("Confetti library failed to load. Confetti effects will be disabled.");
+                window.confetti = () => {
+                    console.warn("Confetti not loaded, skipping confetti effect.");
+                };
+            }
+            const cursor = document.getElementById("custom-cursor");
+            if (cursor) {
+                document.addEventListener("mousemove", (e) => {
+                    cursor.style.left = e.clientX + "px";
+                    cursor.style.top = e.clientY + "px";
+                });
+            } else {
+                console.error("Custom cursor element not found. Default cursor will be visible.");
+                document.body.style.cursor = "auto";
+            }
+            function triggerConfetti(button) {
+                const rect = button.getBoundingClientRect();
+                const x = (rect.left + rect.width / 2) / window.innerWidth;
+                const y = (rect.top + rect.height / 2) / window.innerHeight;
+                confetti({
+                    particleCount: 50,
+                    spread: 30,
+                    origin: { x, y },
+                    angle: 90,
+                    colors: ['#FF69B4', '#FFD700', '#87CEFA'],
+                });
+            }
+            document.querySelectorAll(".btn").forEach(button => {
+                if (button.id !== "no-btn") {
+                    button.addEventListener("click", () => triggerConfetti(button));
+                }
+            });
+            const batluPasswordInput = document.getElementById("batlu-password");
+            const batluSubmitButton = document.getElementById("batlu-submit");
+            const meterFill = document.getElementById("meter-fill");
+            const correctPassword = "shivanya1212";
+            batluPasswordInput.addEventListener("input", () => {
+                const inputLength = batluPasswordInput.value.length;
+                const maxLength = correctPassword.length;
+                const fillPercentage = (inputLength / maxLength) * 100;
+                meterFill.style.width = `${Math.min(fillPercentage, 100)}%`;
+            });
+            batluSubmitButton.addEventListener("click", () => {
+                const enteredPassword = batluPasswordInput.value;
+                if (enteredPassword === correctPassword) {
+                    gsap.to("#batlu-detector", {
+                        opacity: 0,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => {
+                            document.getElementById("batlu-detector").classList.add("hidden");
+                            const letsStartButton = document.getElementById("lets-start");
+                            if (letsStartButton) {
+                                letsStartButton.classList.remove("hidden");
+                                gsap.fromTo(
+                                    letsStartButton,
+                                    { opacity: 0, y: 20 },
+                                    { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+                                );
+                            }
+                        }
+                    });
+                } else {
+                    alert("Incorrect password! Only the real Batlu can enter. Try again!");
+                    batluPasswordInput.value = "";
+                    meterFill.style.width = "0%";
+                }
+            });
+            const tl = gsap.timeline({ paused: true });
+            function showElement(elementId, fromY = -100) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    console.log(`Showing element: ${elementId}`);
+                    element.classList.remove("hidden");
+                    if (element.classList.contains("msg-box") || element.id === "choice" || element.id === "cake") {
+                        gsap.set(element, { x: 0, y: 0 });
+                    }
+                    gsap.fromTo(
+                        element,
+                        { opacity: 0, y: fromY },
+                        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+                    );
+                    if (elementId === "message-text") {
+                        const container = document.querySelector(".message-scroll-container");
+                        if (container) {
+                            container.classList.remove("hidden");
+                            container.style.opacity = "0";
+                            container.style.animation = "none";
+                            setTimeout(() => {
+                                container.style.animation = "fadeIn 2s ease-in forwards";
+                                const voiceMessageBtn = document.getElementById("voice-message-btn");
+                                if (voiceMessageBtn) {
+                                    voiceMessageBtn.classList.remove("hidden");
+                                    gsap.fromTo(
+                                        voiceMessageBtn,
+                                        { opacity: 0, y: 20 },
+                                        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+                                    );
+                                }
+                            }, 10);
+                        }
+                    }
+                } else {
+                    console.error(`Element with ID ${elementId} not found.`);
+                }
+            }
+            function hideElement(elementId, toY = 100) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    gsap.to(element, {
+                        opacity: 0,
+                        y: toY,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => {
+                            element.classList.add("hidden");
+                            gsap.set(element, { y: 0 });
+                        }
+                    });
+                } else {
+                    console.error(`Element with ID ${elementId} not found.`);
+                }
+            }
+            function addHearts() {
+                const heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.innerHTML = "♡";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDelay = Math.random() * 2 + "s";
+                document.body.appendChild(heart);
+                heart.addEventListener("animationend", () => heart.remove());
+            }
+            setInterval(addHearts, 2000);
+            let balloonInterval = null;
+            function addBalloons() {
+                const balloon = document.createElement("div");
+                balloon.classList.add("balloon");
+                balloon.innerHTML = "🎈";
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.animationDelay = Math.random() * 2 + "s";
+                balloon.style.zIndex = 1;
+                document.body.appendChild(balloon);
+                balloon.addEventListener("animationend", () => balloon.remove());
+            }
+            const letsStartButton = document.getElementById("lets-start");
+            if (letsStartButton) {
+                letsStartButton.addEventListener("click", () => {
+                    tl.to("#lets-start", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("lets-start")
+                    })
+                    .to("#msg1", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg1", -100)
+                    }, "+=0.2")
+                    .to("#msg1", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg1")
+                    }, "+=2")
+                    .to("#msg2", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg2", -100)
+                    }, "+=0.2")
+                    .to("#msg2", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg2")
+                    }, "+=2")
+                    .to("#msg3", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg3", -100)
+                    }, "+=0.2")
+                    .to("#msg3", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg3")
+                    }, "+=2")
+                    .to("#msg4", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg4", -100)
+                    }, "+=0.2")
+                    .to("#msg4", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg4")
+                    }, "+=2")
+                    .to("#msg5", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg5", -100)
+                    }, "+=0.2")
+                    .to("#msg5", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg5")
+                    }, "+=2")
+                    .to("#msg6", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg6", -100)
+                    }, "+=0.2")
+                    .to("#msg6", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg6")
+                    }, "+=2")
+                    .to("#msg7", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg7", -100)
+                    }, "+=0.2")
+                    .to("#msg7", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg7")
+                    }, "+=2")
+                    .to("#msg8", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg8", -100)
+                    }, "+=0.2")
+                    .to("#msg8", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg8")
+                    }, "+=2")
+                    .to("#msg9", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg9", -100)
+                    }, "+=0.2")
+                    .to("#msg9", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg9")
+                    }, "+=1")
+                    .to("#msg10", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg10", -100)
+                    }, "+=0.2")
+                    .to("#msg10", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg10")
+                    }, "+=1")
+                    .to("#msg11", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg11", -100)
+                    }, "+=0.2")
+                    .to("#msg11", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg11")
+                    }, "+=2")
+                    .to("#msg12", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg12", -100)
+                    }, "+=0.2")
+                    .to("#msg12", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg12")
+                    }, "+=2")
+                    .to("#msg12-5", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg12-5", -100)
+                    }, "+=0.2")
+                    .to("#msg12-5", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg12-5")
+                    }, "+=2")
+                    .to("#msg14", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("msg14", -100)
+                    }, "+=0.2")
+                    .to("#msg14", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("msg14")
+                    }, "+=2")
+                    .to("#choice", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("choice", -100)
+                    }, "+=0.2");
+                    tl.play();
+                });
+            }
+            let noClickCount = 0;
+            const yesButton = document.getElementById("yes-btn");
+            if (yesButton) {
+                yesButton.addEventListener("click", () => {
+                    gsap.to("#choice", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("choice")
+                    });
+                    gsap.to("#no-message", {
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("no-message")
+                    });
+                    gsap.to("body", {
+                        background: "#000",
+                        duration: 1,
+                        ease: "power3.inOut",
+                        onComplete: () => {
+                            setTimeout(() => showElement("lights"), 1600);
+                        }
+                    });
+                });
+            }
+            const noButton = document.getElementById("no-btn");
+            if (noButton) {
+                noButton.addEventListener("click", () => {
+                    noClickCount++;
+                    if (noClickCount >= 3) {
+                        const noMessage = document.getElementById("no-message");
+                        if (noMessage) {
+                            noMessage.classList.remove("hidden");
+                            gsap.fromTo(
+                                noMessage,
+                                { opacity: 0, y: -20 },
+                                { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+                            );
+                        }
+                    }
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+                    const buttonWidth = noButton.offsetWidth;
+                    const buttonHeight = noButton.offsetHeight;
+                    const maxX = viewportWidth - buttonWidth;
+                    const maxY = viewportHeight - buttonHeight;
+                    const randomX = Math.random() * maxX;
+                    const randomY = Math.random() * maxY;
+                    gsap.to(noButton, {
+                        x: randomX - (viewportWidth / 2 - buttonWidth / 2),
+                        y: randomY - (viewportHeight / 2 - buttonHeight / 2),
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+            }
+            const lightsButton = document.getElementById("lights-btn");
+            if (lightsButton) {
+                lightsButton.addEventListener("click", () => {
+                    gsap.to("body", { 
+                        background: "linear-gradient(135deg, #F5F5F5 0%, #E0E0E0 100%)", 
+                        duration: 1, 
+                        ease: "power3.inOut" 
+                    });
+                    gsap.to("#lights", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("lights")
+                    });
+                    setTimeout(() => showElement("decorate"), 1600);
+                });
+            }
+            const decorateButton = document.getElementById("decorate-btn");
+            if (decorateButton) {
+                decorateButton.addEventListener("click", () => {
+                    gsap.to("#decorate", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("decorate")
+                    });
+                    gsap.to("body", {
+                        background: "linear-gradient(135deg, #FF69B4 0%, #FFD700 100%)",
+                        duration: 3,
+                        ease: "power3.inOut"
+                    });
+                    gsap.to("#birthday-decoration", {
+                        opacity: 1,
+                        duration: 1.5,
+                        ease: "power3.out",
+                        onStart: () => showElement("birthday-decoration", -100)
+                    });
+                    setTimeout(() => showElement("balloons"), 1600);
+                });
+            }
+            const balloonsButton = document.getElementById("balloons-btn");
+            if (balloonsButton) {
+                balloonsButton.addEventListener("click", () => {
+                    gsap.to("#balloons", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("balloons")
+                    });
+                    gsap.to("#birthday-decoration", {
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("birthday-decoration")
+                    });
+                    gsap.to("body", {
+                        background: "linear-gradient(135deg, #F5F5F5 0%, #E0E0E0 100%)",
+                        duration: 1,
+                        ease: "power3.inOut"
+                    });
+                    balloonInterval = setInterval(addBalloons, 400);
+                    setTimeout(() => showElement("cake-btn-div"), 1600);
+                });
+            }
+            const cakeButton = document.getElementById("cake-btn");
+            if (cakeButton) {
+                cakeButton.addEventListener("click", () => {
+                    gsap.to("#cake-btn-div", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("cake-btn-div")
+                    });
+                    gsap.to("#cake", {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        onStart: () => showElement("cake", -100)
+                    });
+                    setTimeout(() => showElement("cut"), 1600);
+                });
+            }
+            const cutButton = document.getElementById("cut-btn");
+            if (cutButton) {
+                cutButton.addEventListener("click", () => {
+                    gsap.to("#cut", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("cut")
+                    });
+                    if (balloonInterval) {
+                        clearInterval(balloonInterval);
+                        balloonInterval = null;
+                    }
+                    gsap.to("#cake", {
+                        opacity: 0,
+                        duration: 1.5,
+                        ease: "power3.in",
+                        onComplete: () => {
+                            hideElement("cake");
+                            const smallCake1 = document.createElement("div");
+                            smallCake1.innerHTML = "🍰";
+                            smallCake1.style.position = "absolute";
+                            smallCake1.style.fontSize = "40px";
+                            smallCake1.style.left = "calc(50% - 60px)";
+                            smallCake1.style.top = "40%";
+                            smallCake1.style.transform = "translate(-50%, -50%)";
+                            smallCake1.style.zIndex = 3;
+                            smallCake1.style.opacity = 0;
+                            document.body.appendChild(smallCake1);
+                            const smallCake2 = document.createElement("div");
+                            smallCake2.innerHTML = "🍰";
+                            smallCake2.style.position = "absolute";
+                            smallCake2.style.fontSize = "40px";
+                            smallCake2.style.left = "calc(50% + 20px)";
+                            smallCake2.style.top = "40%";
+                            smallCake2.style.transform = "translate(-50%, -50%)";
+                            smallCake2.style.zIndex = 3;
+                            smallCake2.style.opacity = 0;
+                            document.body.appendChild(smallCake2);
+                            gsap.to([smallCake1, smallCake2], {
+                                opacity: 1,
+                                duration: 1.5,
+                                ease: "power3.out",
+                                onComplete: () => {
+                                    gsap.to([smallCake1, smallCake2], {
+                                        opacity: 0,
+                                        duration: 1.5,
+                                        ease: "power3.in",
+                                        onComplete: () => {
+                                            smallCake1.remove();
+                                            smallCake2.remove();
+                                            setTimeout(() => showElement("message"), 1600);
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+            const messageButton = document.getElementById("message-btn");
+            if (messageButton) {
+                messageButton.addEventListener("click", () => {
+                    gsap.to("#message", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("message")
+                    });
+                    setTimeout(() => showElement("message-text", 0), 1600);
+                });
+            }
+            const voiceMessageButton = document.getElementById("voice-message-btn");
+            if (voiceMessageButton) {
+                voiceMessageButton.addEventListener("click", () => {
+                    const container = document.querySelector(".message-scroll-container");
+                    if (container) {
+                        gsap.to(container, {
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: "power3.in",
+                            onComplete: () => container.classList.add("hidden")
+                        });
+                    }
+                    gsap.to("#voice-message-btn", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("voice-message-btn")
+                    });
+                    setTimeout(() => {
+                        showElement("voice-message");
+                        setTimeout(() => showElement("end-options"), 1600);
+                    }, 1600);
+                });
+            }
+            const replayButton = document.getElementById("replay-btn");
+            const endButton = document.getElementById("end-btn");
+            if (replayButton) {
+                replayButton.addEventListener("click", () => {
+                    window.location.reload();
+                });
+            }
+            if (endButton) {
+                endButton.addEventListener("click", () => {
+                    gsap.to("#voice-message", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("voice-message")
+                    });
+                    gsap.to("#end-options", {
+                        opacity: 0,
+                        y: 100,
+                        duration: 0.8,
+                        ease: "power3.in",
+                        onComplete: () => hideElement("end-options")
+                    });
+                    setTimeout(() => showElement("end-message"), 1600);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
